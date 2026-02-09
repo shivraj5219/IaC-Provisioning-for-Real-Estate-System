@@ -1,0 +1,145 @@
+.bank-details-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.bank-details-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.bank-details-header h2 {
+  color: #2e7d32;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.bank-details-header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.bank-details-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.required {
+  color: #f44336;
+}
+
+.form-group input {
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.form-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.form-divider::before,
+.form-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.form-divider span {
+  padding: 0 15px;
+  color: #999;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.submit-button {
+  padding: 15px;
+  background: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(46, 125, 50, 0.4);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.security-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f1f8f4;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #2e7d32;
+  margin-top: 10px;
+}
+
+.lock-icon {
+  font-size: 1.5rem;
+}
+
+.security-note p {
+  color: #555;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.error-message {
+  background: #ffebee;
+  color: #c62828;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border-left: 4px solid #f44336;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .bank-details-form-container {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .bank-details-header h2 {
+    font-size: 1.5rem;
+  }
+}

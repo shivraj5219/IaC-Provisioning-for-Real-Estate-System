@@ -1,0 +1,16 @@
+[
+  {
+    "Crop": "Rice",
+    "Season": "Kharif",
+    "Region": "Uttar_Pradesh",
+    "Soil_Type": "Black",
+    "Irrigation_Type": "Canal",
+    "Mechanization_Level": "Medium",
+    "Labour_Availability": "Medium",
+    "Gender_Split": "Mixed",
+    "Farm_Size_Acre": 2.5,
+    "Task": "Harvesting",
+    "Prev_Yield_q_per_acre": 25.0,
+    "Weather_Index": 0.9
+  }
+]

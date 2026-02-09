@@ -1,0 +1,56 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/pnpm-debug.log*
+/dist
+/build
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints
+
+# Models & data (consider Git LFS for large files)
+*.joblib
+*.pkl
+*.h5
+*.pt
+*.ckpt
+*.csv
+
+# Logs
+logs/
+*.log
+
+# Misc
+.idea/
+coverage/
+coverage-final.json
+
+# Build outputs
+/dist
+
+# Public
+public/uploads/
+
+# Ignore secrets
+secrets.json
+
+# Allow checking in small CSVs briefly — remove *.csv above if you want small datasets tracked
+# If you want to track datasets, remove the *.csv entry and add specific dataset paths instead.

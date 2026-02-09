@@ -1,0 +1,485 @@
+.crop-prediction-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  padding-top: 100px;
+}
+
+.prediction-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.prediction-header h1 {
+  color: #2e7d32;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.prediction-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.prediction-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.prediction-form-section {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.prediction-form-section h2 {
+  color: #2e7d32;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+}
+
+/* Soil Health Test Info Banner */
+.soil-health-info {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border: 2px solid #2196f3;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.soil-health-info:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(33, 150, 243, 0.3);
+}
+
+.soil-health-info .info-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.soil-health-info .info-content {
+  flex: 1;
+}
+
+.soil-health-info .info-content strong {
+  display: block;
+  color: #1565c0;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.soil-health-info .info-content p {
+  color: #555;
+  margin: 5px 0 10px 0;
+  font-size: 0.95rem;
+}
+
+.soil-health-link {
+  display: inline-block;
+  background: linear-gradient(135deg, #2196f3 0%, #42a5f5 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
+}
+
+.soil-health-link:hover {
+  background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(33, 150, 243, 0.4);
+}
+
+.prediction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-section h3 {
+  color: #4caf50;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-group.has-error input {
+  border-color: #f44336;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  color: #333;
+}
+
+.form-group input::placeholder {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.btn-reset,
+.btn-predict {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-reset {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.btn-reset:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-predict {
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+  color: white;
+}
+
+.btn-predict:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-predict:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.prediction-result {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 100px;
+}
+
+.prediction-result h2 {
+  color: #2e7d32;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.recommended-crops {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.crop-card {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #4caf50;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.crop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+
+.crop-card.top-pick {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border-left: 4px solid #ff9800;
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.3);
+}
+
+.crop-card.top-pick .crop-rank {
+  background-color: #ff9800;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.crop-rank {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #4caf50;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.crop-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+
+.crop-confidence {
+  color: #666;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.crop-details p {
+  color: #555;
+  line-height: 1.5;
+}
+
+.single-prediction {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.prediction-icon {
+  font-size: 5rem;
+  margin-bottom: 15px;
+}
+
+.single-prediction h3 {
+  color: #2e7d32;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.single-prediction p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.prediction-tips {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.prediction-tips h3 {
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+.prediction-tips ul {
+  list-style-position: inside;
+  color: #555;
+}
+
+.prediction-tips ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.prediction-tips ul li:last-child {
+  border-bottom: none;
+}
+
+.prediction-result .error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 5px;
+  border-left: 4px solid #c62828;
+}
+
+@media (max-width: 1024px) {
+  .prediction-content {
+    grid-template-columns: 1fr;
+  }
+
+  .prediction-result {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .crop-prediction-container {
+    padding: 20px 15px;
+    padding-top: 90px;
+  }
+
+  .prediction-header h1 {
+    font-size: 2rem;
+  }
+
+  .prediction-header p {
+    font-size: 1rem;
+  }
+
+  .prediction-form-section,
+  .prediction-result {
+    padding: 25px 20px;
+  }
+
+  .prediction-form-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .form-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .soil-health-info {
+    padding: 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .soil-health-info .info-icon {
+    font-size: 2.5rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-reset,
+  .btn-predict {
+    width: 100%;
+  }
+
+  .prediction-result h2 {
+    font-size: 1.6rem;
+  }
+
+  .crop-name {
+    font-size: 1.3rem;
+  }
+
+  .crop-rank {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .crop-prediction-container {
+    padding: 15px 10px;
+    padding-top: 85px;
+  }
+
+  .prediction-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .prediction-form-section,
+  .prediction-result {
+    padding: 20px 15px;
+  }
+
+  .prediction-form-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  .btn-reset,
+  .btn-predict {
+    padding: 10px 15px;
+    font-size: 0.95rem;
+  }
+
+  .soil-health-link {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .prediction-icon {
+    font-size: 4rem;
+  }
+
+  .single-prediction h3 {
+    font-size: 1.6rem;
+  }
+}
