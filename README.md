@@ -131,6 +131,51 @@ pip install -r requirements.txt
 
 ---
 
+## ☁️ AWS Deployment
+
+Deploy your application to AWS using Terraform for a production-ready infrastructure.
+
+### Quick Deploy
+
+**For Windows (PowerShell):**
+```powershell
+.\deploy.ps1
+```
+
+**For Mac/Linux:**
+```bash
+chmod +x deploy.sh
+./deploy.sh
+```
+
+### Manual Deployment
+
+See the comprehensive [Deployment Guide](DEPLOYMENT_GUIDE.md) for detailed step-by-step instructions.
+
+### What Gets Deployed
+
+- **VPC** with public and private subnets
+- **ECS Cluster** running your containers
+- **Application Load Balancer** for traffic distribution
+- **DocumentDB** (MongoDB-compatible) for database
+- **ECR** repositories for Docker images
+- **CloudWatch** for logs and monitoring
+
+### Cost Estimate
+- Development: ~$50-80/month
+- Production: ~$150-300/month
+
+### Architecture
+
+View the [Architecture Diagram](ARCHITECTURE.md) to understand the infrastructure.
+
+### Quick Links
+- 📖 [Complete Deployment Guide](DEPLOYMENT_GUIDE.md)
+- 🏗️ [Architecture Overview](ARCHITECTURE.md)
+- 📁 [Terraform Configuration](terraform/README.md)
+
+---
+
 ## 🗂️ Project Structure
 
 ```

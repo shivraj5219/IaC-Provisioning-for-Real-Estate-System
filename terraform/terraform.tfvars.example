@@ -1,0 +1,27 @@
+# Terraform Variables Values
+# Copy this file to terraform.tfvars and update with your values
+
+aws_region = "us-east-1"  # Change to your preferred AWS region
+project_name = "krishi-sangam-app"
+environment = "dev"
+
+# Database credentials - CHANGE THESE!
+db_username = "shivraj_singh2806"
+db_password = "Shivraj@123"  # IMPORTANT: Use a strong password
+
+# Networking
+vpc_cidr = "10.0.0.0/16"
+
+# Application configuration
+backend_port = 5000
+frontend_port = 80
+
+# ECS Task sizing (adjust based on your needs)
+backend_cpu = 512      # 0.5 vCPU
+backend_memory = 1024  # 1 GB
+frontend_cpu = 256     # 0.25 vCPU
+frontend_memory = 512  # 0.5 GB
+
+# Number of containers to run
+backend_desired_count = 2
+frontend_desired_count = 2

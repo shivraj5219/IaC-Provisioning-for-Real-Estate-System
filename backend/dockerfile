@@ -1,7 +1,14 @@
-FROM node:18
+FROM node:18-alpine
 WORKDIR /app
+
+# Skip Chromium download - puppeteer is used only for PDF generation
+# and does not need a browser inside the container
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+    PUPPETEER_SKIP_DOWNLOAD=true
+
 COPY package*.json ./
-RUN npm install
+RUN npm install --omit=dev
+
 COPY . .
 EXPOSE 5000
 CMD ["node", "server.js"]
