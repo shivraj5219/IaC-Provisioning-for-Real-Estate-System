@@ -78,3 +78,29 @@ variable "frontend_desired_count" {
   type        = number
   default     = 2
 }
+
+variable "jwt_secret" {
+  description = "Secret key for JWT token generation"
+  type        = string
+  sensitive   = true
+}
+
+variable "razorpay_key_id" {
+  description = "Razorpay payment gateway key ID"
+  type        = string
+  sensitive   = true
+  default     = ""
+}
+
+variable "razorpay_key_secret" {
+  description = "Razorpay payment gateway key secret"
+  type        = string
+  sensitive   = true
+  default     = ""
+}
+
+variable "payment_mode" {
+  description = "Payment mode: 'live' or 'mock'"
+  type        = string
+  default     = "mock"
+}

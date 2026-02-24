@@ -48,6 +48,22 @@ resource "aws_ecs_task_definition" "backend" {
       {
         name  = "MONGO_URI"
         value = var.mongo_uri
+      },
+      {
+        name  = "JWT_SECRET"
+        value = var.jwt_secret
+      },
+      {
+        name  = "RAZORPAY_KEY_ID"
+        value = var.razorpay_key_id
+      },
+      {
+        name  = "RAZORPAY_KEY_SECRET"
+        value = var.razorpay_key_secret
+      },
+      {
+        name  = "PAYMENT_MODE"
+        value = var.payment_mode
       }
     ]
 

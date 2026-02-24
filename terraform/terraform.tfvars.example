@@ -25,3 +25,12 @@ frontend_memory = 512  # 0.5 GB
 # Number of containers to run
 backend_desired_count = 2
 frontend_desired_count = 2
+
+# Security and Authentication
+jwt_secret = "your-super-secret-jwt-key-change-this-in-production"
+
+# Payment Gateway Configuration (Razorpay)
+# For testing, you can use mock mode by keeping these empty and setting payment_mode = "mock"
+razorpay_key_id = ""          # Add your Razorpay Key ID here or leave empty for mock mode
+razorpay_key_secret = ""      # Add your Razorpay Key Secret here or leave empty for mock mode  
+payment_mode = "mock"         # Options: "mock" or "live"
